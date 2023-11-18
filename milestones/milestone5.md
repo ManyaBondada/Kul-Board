@@ -6,8 +6,8 @@ This document should be completed and submitted during **Unit 9** of this course
 
 This unit, be sure to complete all tasks listed below. To complete a task, place an `x` between the brackets.
 
-- [ ] Deploy your project on Railway
-  - [ ] In `readme.md`, add the link to your deployed project
+- [x] Deploy your project on Railway
+  - [x] In `readme.md`, add the link to your deployed project
 - [x] Update the status of issues in your project board as you complete them
 - [x] In `readme.md`, check off the features you have completed in this unit by adding a ✅ emoji in front of their title
   - [x] Under each feature you have completed, **include a GIF** showing feature functionality
@@ -26,7 +26,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
 
 - [x] The project includes an Express backend app and a React frontend app
 - [x] The project includes these backend-specific features:
-  -x[ ] At least one of each of the following database relationship in Postgres
+  -[x] At least one of each of the following database relationship in Postgres
     - [x] one-to-many
     - [x] many-to-many with a join table
   - [x] A well-designed RESTful API
@@ -41,7 +41,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
     - [x] Components broken down into categories, including Page and Component types
     - [x] Corresponding container components and presenter components as appropriate
 - [x] The project includes dynamic routes for both frontend and backend apps
-- [ ] The project is deployed on Railway with all pages and features working
+- [x] The project is deployed on Railway with all pages and features working
 
 ### Custom Features
 
