@@ -3,8 +3,8 @@
 import GitHubStrategy from "passport-github2";
 
 const options = {
-  clientID: "1bdb25d4ccc528bca235",
-  clientSecret: "caa07fff7433aa3044ebcad7b38b5fc5ecaf1f85",
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/github/callback",
 };
 
