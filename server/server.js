@@ -11,6 +11,13 @@ import boardDetailsRouter from "./routes/boardDetails.js";
 import authenticationRouter from "./routes/authentication.js";
 import taskDetailsRouter from "./routes/taskDetails.js";
 
+// import routes for github single-sign-on
+import passport from "passport";
+import session from "express-session";
+import { GitHub } from "./config/githubStratergy.js";
+import authRoutes from "./routes/oauth.js";
+import { stringify } from "querystring";
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -26,13 +33,44 @@ if (process.env.NODE_ENV === "development") {
   app.use(express.static("public"));
 }
 
-
 // add functionality to restrict backend connection only to front-end post 5173
 const corsOptions = {
   origin: "http://localhost:5173",
   credentials: true,
 };
 app.use(cors(corsOptions));
+
+// for session management
+app.use(
+  session({
+    secret: "sq7taigbtwo2brby",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// setting routes for github oauth
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(GitHub);
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+app.get("/", (req, res) => {
+  res.redirect("http://localhost:5173/login");
+});
+
+app.get("/usernotfound", (req, res) => {
+  res.send(stringify.json({ error: true, message: "User Not Found" }));
+});
+
+app.use("/auth", authRoutes);
 
 //add to parse the cookies
 app.use(cookieParser());
