@@ -4,8 +4,6 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Manya Bondada and Arpit Singh
 
-🔗 Link to deployed app: https://kulboard-production-7813.up.railway.app/
-
 ## About
 
 ### Description and Purpose
